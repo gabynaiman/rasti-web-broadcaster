@@ -37,4 +37,8 @@ Gem::Specification.new do |spec|
     spec.add_development_dependency 'tins', '~> 1.6.0'
     spec.add_development_dependency 'json', '~> 1.8'
   end
+
+  if RUBY_VERSION < '2.2.2'
+    spec.add_development_dependency 'rack', '< 2'
+  end
 end
