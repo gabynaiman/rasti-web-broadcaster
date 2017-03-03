@@ -15,6 +15,8 @@ module Rasti
       attr_config :redis_url, 'redis://localhost:6379'
       attr_config :logger,    Logger.new(STDOUT)
 
+      @mutex = Mutex.new
+
       class << self
 
         extend Forwardable
@@ -26,7 +28,9 @@ module Rasti
         private
 
         def broadcaster
-          @broadcaster ||= ::Broadcaster.new configuration
+          @mutex.synchronize do
+            @broadcaster ||= ::Broadcaster.new configuration
+          end
         end
 
       end
