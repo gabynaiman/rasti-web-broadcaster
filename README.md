@@ -30,7 +30,7 @@ Or install it yourself as:
 ```ruby
 Rasti::Web::Broadcaster.configure do |config|
   config.id = 'AppName'
-  config.redis_url = "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
+  config.redis_settings = "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
   config.logger = Logger.new "/log/#{ENV['RACK_ENV']}.log"
 end
 ```
@@ -51,7 +51,7 @@ Rasti::Web::Broadcaster.publish channel_id, data:  'hello'      # string or json
 ```ruby
 require 'broadcaster'
 
-broadcaster = Broadcaster.new id: 'AppName', redis_url: "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
+broadcaster = Broadcaster.new id: 'AppName', redis_settings: "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
 
 broadcaster.publish channel_id, data: 'hello'
 ```

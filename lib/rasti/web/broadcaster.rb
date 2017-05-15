@@ -11,9 +11,10 @@ module Rasti
 
       extend ClassConfig
 
-      attr_config :id,        'rasti.web.broadcaster'
-      attr_config :redis_url, 'redis://localhost:6379'
-      attr_config :logger,    Logger.new(STDOUT)
+      attr_config :id,             'rasti.web.broadcaster'
+      attr_config :redis_client,   Redic
+      attr_config :redis_settings, 'redis://localhost:6379'
+      attr_config :logger,         Logger.new(STDOUT)
 
       @mutex = Mutex.new
 
