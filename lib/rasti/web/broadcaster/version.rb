@@ -1,7 +1,7 @@
 module Rasti
   module Web
     class Broadcaster
-      VERSION = '0.1.1'
+      VERSION = '1.0.0'
     end
   end
 end
