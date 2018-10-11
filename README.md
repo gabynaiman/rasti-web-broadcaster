@@ -38,6 +38,9 @@ end
 ### Rack middleware
 ```ruby
 use Rasti::Web::Broadcaster
+
+headers = {'Access-Control-Allow-Origin' => '*'}
+use Rasti::Web::Broadcaster, headers
 ```
 
 ### Publishing events from the web

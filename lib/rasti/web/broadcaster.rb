@@ -36,13 +36,14 @@ module Rasti
 
       end
 
-      def initialize(app)
+      def initialize(app, headers={})
         @app = app
+        @headers = headers
       end
 
       def call(env)
         if Faye::EventSource.eventsource? env
-          event_source = Faye::EventSource.new env
+          event_source = Faye::EventSource.new env, headers: @headers
           channel = env['PATH_INFO'][1..-1]
 
           subscription_id = self.class.subscribe channel do |message|

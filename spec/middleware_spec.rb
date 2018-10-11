@@ -8,6 +8,7 @@ describe Rasti::Web::Broadcaster do
     event << 'Content-Type: text/event-stream'
     event << 'Cache-Control: no-cache, no-store'
     event << 'Connection: close'
+    event << 'Access-Control-Allow-Origin: *'
     event << ''
     event << 'retry: 5000'
     event << ''
@@ -33,7 +34,11 @@ describe Rasti::Web::Broadcaster do
     end
   end
 
-  let(:app) { Rasti::Web::Broadcaster.new ->(env) { [200, {}, ['hello']] } }
+  let(:headers) { {'Access-Control-Allow-Origin' => '*'} }
+
+  let(:inner_app) { ->(env) { [200, {}, ['hello']] } }
+
+  let(:app) { Rasti::Web::Broadcaster.new inner_app, headers }
 
   it 'Handle events' do
     env = Rack::MockRequest.env_for '/channel_1', 'HTTP_ACCEPT' => 'text/event-stream',
