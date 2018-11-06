@@ -3,6 +3,7 @@ require 'broadcaster'
 require 'class_config'
 
 require_relative 'broadcaster/safe_event_machine'
+require_relative 'broadcaster/safe_rack_lint'
 require_relative 'broadcaster/version'
 
 module Rasti
