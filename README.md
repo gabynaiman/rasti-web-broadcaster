@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/gabynaiman/rasti-web-broadcaster.svg?branch=master)](https://travis-ci.org/gabynaiman/rasti-web-broadcaster)
 [![Coverage Status](https://coveralls.io/repos/gabynaiman/rasti-web-broadcaster/badge.svg?branch=master)](https://coveralls.io/r/gabynaiman/rasti-web-broadcaster?branch=master)
 [![Code Climate](https://codeclimate.com/github/gabynaiman/rasti-web-broadcaster.svg)](https://codeclimate.com/github/gabynaiman/rasti-web-broadcaster)
-[![Dependency Status](https://gemnasium.com/gabynaiman/rasti-web-broadcaster.svg)](https://gemnasium.com/gabynaiman/rasti-web-broadcaster)
 
 Enable server sent events with rack middleware implemented over Faye and Broadcaster (Redis Pub/Sub)
 
