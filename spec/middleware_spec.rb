@@ -46,12 +46,12 @@ describe Rasti::Web::Broadcaster do
 
     event_source = nil
     events = []
-    
+
     env['async.callback'] = proc do |(status, headers, body)|
       event_source = body.instance_variable_get(:@socket_object)
       body.each { |e| events << e }
     end
-    
+
     Rasti::Web::Broadcaster.publish 'channel_1', data: 'message 0'
 
     app.call env
@@ -66,7 +66,7 @@ describe Rasti::Web::Broadcaster do
 
     events.must_equal [
       event_headers,
-      event_for(data: 'message 1', event: 'event_1', id: 1), 
+      event_for(data: 'message 1', event: 'event_1', id: 1),
       event_for(data: 'message 3')
     ]
   end
