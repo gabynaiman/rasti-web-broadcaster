@@ -67,7 +67,7 @@ module Rasti
 
       private
 
-      attr_reader :app, :event_sources, :subscriptions_mutex, :recurrent_executor
+      attr_reader :app, :event_sources, :subscriptions_mutex, :recurrent_executor, :keep_alive_interval_seconds
 
       def channel_from(env)
         env['PATH_INFO'][1..-1]
@@ -88,7 +88,7 @@ module Rasti
 
       def keep_alive_messages_loop
         logger.info('Starting Keep alive messages loop')
-        recurrent_executor.interval_loop(@keep_alive_interval_seconds) do
+        recurrent_executor.interval_loop(keep_alive_interval_seconds) do
           logger.debug('Sending Keep Alive messages')
           begin
             subscriptions_mutex.synchronize do
