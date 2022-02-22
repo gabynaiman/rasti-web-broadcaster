@@ -1,7 +1,7 @@
 # Rasti::Web::Broadcaster
 
 [![Gem Version](https://badge.fury.io/rb/rasti-web-broadcaster.svg)](https://rubygems.org/gems/rasti-web-broadcaster)
-[![Build Status](https://travis-ci.org/gabynaiman/rasti-web-broadcaster.svg?branch=master)](https://travis-ci.org/gabynaiman/rasti-web-broadcaster)
+[![Build Status](https://app.travis-ci.com/gabynaiman/rasti-web-broadcaster.svg?branch=master)](https://app.travis-ci.com/gabynaiman/rasti-web-broadcaster)
 [![Coverage Status](https://coveralls.io/repos/gabynaiman/rasti-web-broadcaster/badge.svg?branch=master)](https://coveralls.io/r/gabynaiman/rasti-web-broadcaster?branch=master)
 [![Code Climate](https://codeclimate.com/github/gabynaiman/rasti-web-broadcaster.svg)](https://codeclimate.com/github/gabynaiman/rasti-web-broadcaster)
 
