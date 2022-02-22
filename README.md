@@ -31,6 +31,7 @@ Rasti::Web::Broadcaster.configure do |config|
   config.id = 'AppName'
   config.redis_settings = "redis://#{ENV['REDIS_HOST']}:#{ENV['REDIS_PORT']}"
   config.logger = Logger.new "/log/#{ENV['RACK_ENV']}.log"
+  config.keep_alive_interval = 30
 end
 ```
 
