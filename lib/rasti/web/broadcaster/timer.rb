@@ -16,17 +16,18 @@ module Rasti
 
           def execute_using_time_slot(interval)
             started_at = Time.now
-
-            Timeout.timeout(interval) do
-              yield
-            end
+            yield
 
           rescue => ex
             Broadcaster.logger.error(self) { ex }
 
           ensure
             elapsed_time = Time.now - started_at
-            sleep interval - elapsed_time if interval > elapsed_time
+            if elapsed_time > interval
+              Broadcaster.logger.warn(self) { "Elapsed time #{elapsed_time}s for interval of #{interval}s" }
+            else
+              sleep interval - elapsed_time
+            end
           end
 
         end

@@ -1,7 +1,6 @@
 require 'faye/websocket'
 require 'broadcaster'
 require 'class_config'
-require 'timeout'
 
 require_relative 'broadcaster/safe_event_machine'
 require_relative 'broadcaster/safe_rack_lint'
