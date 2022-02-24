@@ -47,7 +47,7 @@ module Rasti
         @mutex = Mutex.new
         @subscriptions = {}
 
-        send_keep_alive_message
+        start_sending_keep_alive_messages
       end
 
       def call(env)
@@ -90,7 +90,7 @@ module Rasti
         event_source.send data, event: event, id: id
       end
 
-      def send_keep_alive_message
+      def start_sending_keep_alive_messages
         if self.class.keep_alive_interval
           Timer.every self.class.keep_alive_interval do
             subscriptions.each do |subscription_id, event_source|
