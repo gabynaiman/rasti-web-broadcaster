@@ -33,7 +33,5 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
-    - name: Install Bundler ~> 2.3
-      run: gem install bundler -v '~> 2.3'
     - name: Run tests
       run: bundle exec rake
