@@ -30,8 +30,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'coveralls', '~> 0.8'
   spec.add_development_dependency 'pry-nav', '~> 0.2'
   spec.add_development_dependency 'rack-test', '~> 0.6'
-
-  if RUBY_VERSION < '2.2.2'
-    spec.add_development_dependency 'rack', '< 2'
-  end
 end
