@@ -73,6 +73,7 @@ module Rasti
 
       def subscribe(channel, event_source)
         subscription_id = self.class.subscribe channel do |message|
+          self.class.logger.info(self.class) { "Sending message to #{subscription_id} | Channel: #{channel} | Message: #{message}" }
           send_message(event_source, **message)
         end
 
